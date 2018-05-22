@@ -505,21 +505,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // 2) Remove the code below.
           // 3) Uncomment `this.$.checkoutForm.submit()`.
 
-          this.$.checkoutForm.dispatchEvent(new CustomEvent('iron-form-presubmit', {
-            composed: true}));
-
-          this._submitFormDebouncer = Polymer.Debouncer.debounce(this._submitFormDebouncer,
-            Polymer.Async.timeOut.after(1000), () => {
-              this.$.checkoutForm.dispatchEvent(new CustomEvent('iron-form-response', {
-                composed: true, detail: {
-                  response: {
-                    success: 1,
-                    successMessage: 'Demo checkout process complete.'
-                  }
-                }}));
-            });
-
-          // this.$.checkoutForm.submit();
+          this.$.checkoutForm.submit();
         }
       }
 
